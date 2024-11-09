@@ -1,0 +1,9 @@
+Package: certbot-dns-websupport
+Version: 1.0
+Section: python
+Priority: optional
+Architecture: all
+Depends: python3, python3-requests, python3-pip
+Maintainer: Andrej Vyšný vysnyandrej@gmail.com
+Description: A short description of your Python app.
+ A longer description of your Python application.

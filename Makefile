@@ -10,8 +10,7 @@ cleanup:
 	find . -name "*.pyo" -delete
 
 build: cleanup
-	python setup.py bdist_wheel
+	python3 setup.py bdist_wheel
 
 upload:
 	twine upload dist/*
-

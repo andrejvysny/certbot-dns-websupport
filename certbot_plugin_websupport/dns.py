@@ -16,7 +16,7 @@ from certbot.plugins import dns_common
 logger = logging.getLogger(__name__)
 
 API_ENDPOINT = 'https://rest.websupport.sk'
-ACCOUNT_URL = 'https://admin.websupport.sk/sk/auth/apiKey'
+ACCOUNT_URL = 'https://admin.websupport.sk/sk/auth/security-settings'
 
 @zope.interface.implementer(interfaces.IAuthenticator)
 @zope.interface.provider(interfaces.IPluginFactory)
@@ -34,10 +34,11 @@ class Authenticator(dns_common.DNSAuthenticator):
         if name in ("dns", "certbot-plugin-websupport:dns"):
             logger.warning("""Certbot is moving to remove 3rd party plugins prefixes.
 
-Please use --authenticator dns-websupport --dns-websupport-credentials
+                                Please use --authenticator dns-websupport --dns-websupport-credentials
 
-See: https://github.com/certbot/certbot/pull/8131
-""")
+                                See: https://github.com/certbot/certbot/pull/8131
+                                """)
+            
         super(Authenticator, self).__init__(config, name, **kwargs)
         self.credentials = None
 
